@@ -1,0 +1,11 @@
+Symptom1,Symptom2,Symptom3,Symptom4,Symptom5,Prognosis
+1,0,0,1,0,Common Cold
+0,1,1,0,1,Flu
+1,1,0,1,0,Malaria
+0,1,0,1,1,Tuberculosis
+1,1,1,0,0,COVID-19
+0,0,1,1,1,Common Cold
+1,1,1,1,0,Flu
+0,0,0,1,0,Malaria
+1,0,1,1,0,Tuberculosis
+0,1,1,0,1,COVID-19
