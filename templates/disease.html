@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% block title %}
+<title class="text-center">Disease Prediction</title>
+<link rel="stylesheet" href="style.css" />
+{% endblock title %}
+{% block body %}
+<div class="my-3 mx-3 logo">
+  <h2>Medivise</h2>
+  <img src="/static/OIP.png" alt="" height="30px" width="30px" />
+</div>
+
+<div class="disease-container">
+  <h1>Disease Prediction</h1>
+  <form action="/disease" method="POST" class="disease-form">
+    <div class="disease-group">
+      <label for="symptom1">
+        <input type="checkbox" name="symptom1" value="1"> Fever
+      </label>
+    </div>
+    <div class="disease-group">
+      <label for="symptom2">
+        <input type="checkbox" name="symptom2" value="1"> Cough
+      </label>
+    </div>
+    <div class="disease-group">
+      <label for="symptom3">
+        <input type="checkbox" name="symptom3" value="1"> Fatigue
+      </label>
+    </div>
+    <div class="disease-group">
+      <label for="symptom4">
+        <input type="checkbox" name="symptom4" value="1"> Sore Throat
+      </label>
+    </div>
+    <div class="disease-group">
+      <label for="symptom5">
+        <input type="checkbox" name="symptom5" value="1"> Body Aches
+      </label>
+    </div>
+    <!-- Add more symptoms as needed -->
+    <button type="submit" class="btn btn-primary">Predict Disease</button>
+  </form>
+  
+  <!-- Show prediction result if available -->
+  {% if prediction_text %}
+  <div class="disease-result">
+    <h2>{{ prediction_text }}</h2>
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

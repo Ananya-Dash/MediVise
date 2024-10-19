@@ -1,0 +1,66 @@
+{% extends "index.html" %} {% block title %}
+<title class="text-center">Home</title>
+<link rel="stylesheet" href="style.css" />
+{% endblock title %} {% block body %}
+
+<nav class="navbar navbar-expand-lg text-light nav-home">
+  <div class="my-3 mx-3 logo">
+    <h2>Medivise</h2>
+    <img src="/static/OIP.png" alt="" height="30px" width="30px" />
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">{{current_user.username}}</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/quiz">Quiz</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/disease">Predict Disease</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/clinic">Nearby Clinic</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/logout">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="img-container">
+  <a href="/quiz">
+    <img
+      class="menu-img"
+      src="/static/quiz.png"
+      class="rounded float-start"
+      alt="..."
+    />
+    <h4 class="text-center my-3">Take a Quiz</h4></a
+  >
+  <a href="/disease">
+    <img
+      class="menu-img"
+      src="/static/disease.png"
+      class="rounded mx-auto d-block"
+      alt="..."
+    />
+    <h4 class="text-center my-3">Predict Disease</h4>
+  </a>
+  <a href="/clinic">
+    <img
+      class="menu-img"
+      src="/static/clinic.png"
+      class="rounded float-end"
+      alt="..."
+    />
+    <h4 class="text-center my-3">Nearby Clinic</h4>
+  </a>
+</div>
+{% endblock body%}

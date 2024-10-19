@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Practices Quiz</title>
+</head>
+<body>
+    <h1>Health Practices Quiz</h1>
+
+    <form action="/quiz" method="POST">
+        <label for="water">How many liters of water do you drink daily?</label>
+        <input type="number" step="0.1" name="water" required><br>
+
+        <label for="exercise">How many hours of exercise do you do weekly?</label>
+        <input type="number" step="0.1" name="exercise" required><br>
+
+        <label for="sitting">How many hours do you sit in one place for work?</label>
+        <input type="number" step="0.1" name="sitting" required><br>
+
+        <label for="sleep">How many hours do you sleep per night?</label>
+        <input type="number" step="0.1" name="sleep" required><br>
+
+        <label for="diet">How many servings of fruits and vegetables do you eat daily?</label>
+        <input type="number" step="0.1" name="diet" required><br>
+
+        <label for="stress">On a scale of 1 to 10, how stressed are you on a typical day?</label>
+        <input type="number" name="stress" min="1" max="10" required><br>
+
+        <input type="submit" value="Get Health Tips">
+    </form>
+
+    <!-- Show recommendation tips if available -->
+    {% if tips %}
+    <h2>Recommendations:</h2>
+    <ul>
+        {% for tip in tips %}
+        <li>{{ tip }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if recommendations %}
+    <h2>Your Personalized Recommendations:</h2>
+    <ul>
+        {% for recommendation in recommendations %}
+        <li>{{ recommendation }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    {% if detailed_feedback %}
+    <h2>Detailed Feedback:</h2>
+    <ul>
+        {% for feedback in detailed_feedback %}
+        <li>{{ feedback }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

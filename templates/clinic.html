@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Search</title>
+</head>
+<body>
+    <h1>Find Clinics in Your Area</h1>
+
+    <!-- Phase 1: Select City -->
+    <form method="POST">
+        <label for="city">Select your city:</label>
+        <select name="city" required>
+            <option value="">--Select a City--</option>
+            {% for city in cities %}
+            <option value="{{ city }}" {% if selected_city == city %}selected{% endif %}>{{ city }}</option>
+            {% endfor %}
+        </select>
+
+        {% if areas %}  <!-- Phase 2: Select Area (if city is selected) -->
+        <label for="area">Select your area:</label>
+        <select name="area">
+            <option value="">--Select an Area--</option>
+            {% for area in areas %}
+            <option value="{{ area }}">{{ area }}</option>
+            {% endfor %}
+        </select>
+        {% endif %}
+        
+        <input type="submit" value="Search">
+    </form>
+
+    {% if clinics %}
+<h2>Clinics in {{ selected_area }} ({{ selected_city }}):</h2>
+<ul>
+    {% for clinic in clinics %}
+    <li>
+        <strong>Name:</strong> {{ clinic.name }}<br>
+        <strong>Address:</strong> {{ clinic.address }}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+</body>
+</html>

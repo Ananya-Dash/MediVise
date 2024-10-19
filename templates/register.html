@@ -1,0 +1,70 @@
+{% extends "index.html" %} {% block title %}
+<title class="text-center">Sign Up</title>
+<link rel="stylesheet" href="style.css" />
+{% endblock title %} {% block body %}
+
+<div class="my-3 mx-3 logo">
+  <h2>Medivise</h2>
+  <img src="/static/OIP.png" alt="" height="30px" width="30px" />
+</div>
+
+<div class="form-container">
+  <h1 class="text-center my-3">Sign Up</h1>
+  <form class="container-fluid my-3" method="POST" action="/register">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="inputEmail4"
+          name="email"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="inputPassword4"
+          name="password"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputUser">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputUser"
+        placeholder="arpita123"
+        name="username"
+      />
+      <small id="emailHelp" class="form-text text-muted text-light"
+        >Username must be unique.</small
+      >
+    </div>
+    <div class="form-group">
+      <label for="inputFirstName">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputFirstName"
+        placeholder="Arpita"
+        name="fname"
+      />
+    </div>
+    <div class="form-group">
+      <label for="inputLastName">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="inputLastName"
+        placeholder="Ghadai"
+        name="lname"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+</div>
+{% endblock body %}
