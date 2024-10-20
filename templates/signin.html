@@ -17,10 +17,13 @@ get_flashed_messages(with_categories=true) %} {% if messages %}
   {% endfor %}
 </ul>
 {% endif %} {% endwith %}
-<div class="my-3 mx-3 logo">
-  <h2>Medivise</h2>
-  <img src="/static/OIP.png" alt="" height="30px" width="30px" />
-</div>
+
+<nav class="navbar navbar-expand-lg text-light nav-home">
+  <div class="my-3 mx-3 logo">
+    <h2>Medivise</h2>
+    <img src="/static/OIP.png" alt="" height="30px" width="30px" />
+  </div>
+</nav>
 
 <div class="form-container">
   <h1 class="text-center my-3">Sign In</h1>

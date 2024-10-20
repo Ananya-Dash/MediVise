@@ -11,10 +11,12 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">{{current_user.username}}</a>
+        <a class="nav-link userName" href="#">
+          Hey {{current_user.username}}!</a
+        >
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#"
+        <a class="nav-link current" href="/home"
           >Home <span class="sr-only">(current)</span></a
         >
       </li>
@@ -42,7 +44,8 @@
       class="rounded float-start"
       alt="..."
     />
-    <h4 class="text-center my-3">Take a Quiz</h4></a
+    <h4 class="text-center my-3">Take a Quiz</h4>
+    <p class="faded-text text-center">Dive into some quick questions !</p></a
   >
   <a href="/disease">
     <img
@@ -52,6 +55,8 @@
       alt="..."
     />
     <h4 class="text-center my-3">Predict Disease</h4>
+
+    <p class="faded-text text-center">Let's fight it!</p>
   </a>
   <a href="/clinic">
     <img
@@ -61,6 +66,7 @@
       alt="..."
     />
     <h4 class="text-center my-3">Nearby Clinic</h4>
+    <p class="faded-text text-center">Let's drive to nearby hospitals!</p>
   </a>
 </div>
 {% endblock body%}

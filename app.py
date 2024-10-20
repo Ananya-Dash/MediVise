@@ -65,7 +65,8 @@ def index():
 # Logout route
 @app.route('/logout')
 def logout():
-    return render_template('logout.html')
+    logout_user()
+    return redirect('/')
 
 # Register route
 @app.route('/register', methods=['POST', 'GET'])
