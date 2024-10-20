@@ -267,3 +267,80 @@ a{
   text-shadow: black;
   font-weight: 600;
 }
+
+/* Style for the overall form */
+.quiz-form {
+  width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, rgba(168, 39, 104, 0.9), rgba(168, 39, 104, 0.9));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Center the heading */
+.quiz-heading {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Group for each label and input */
+.quiz-group {
+  margin-bottom: 15px;
+}
+
+/* Input field style */
+.quiz-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Submit button style */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Style for the result box */
+.result {
+  width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, rgba(168, 39, 104, 0.9), rgba(168, 39, 104, 0.9));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Center the heading in the result section */
+.result-heading {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* List style for the recommendations, tips, and feedback */
+.result-list {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+/* List item styling */
+.result-list li {
+  margin-bottom: 10px;
+}

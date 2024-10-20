@@ -38,52 +38,69 @@
 
 <h1>Health Practices Quiz</h1>
 
-<form action="/quiz" method="POST">
-  <label for="water">How many liters of water do you drink daily?</label>
-  <input type="number" step="0.1" name="water" required /><br />
+<form action="/quiz" method="POST" class="quiz-form">
+  <h1 class="quiz-heading">Health Practices Quiz</h1>
+  <div class="quiz-group">
+    <label for="water">How many liters of water do you drink daily?</label>
+    <input type="number" step="0.1" name="water" required />
+  </div>
 
-  <label for="exercise">How many hours of exercise do you do weekly?</label>
-  <input type="number" step="0.1" name="exercise" required /><br />
+  <div class="quiz-group">
+    <label for="exercise">How many hours of exercise do you do weekly?</label>
+    <input type="number" step="0.1" name="exercise" required />
+  </div>
 
-  <label for="sitting">How many hours do you sit in one place for work?</label>
-  <input type="number" step="0.1" name="sitting" required /><br />
+  <div class="quiz-group">
+    <label for="sitting">How many hours do you sit in one place for work?</label>
+    <input type="number" step="0.1" name="sitting" required />
+  </div>
 
-  <label for="sleep">How many hours do you sleep per night?</label>
-  <input type="number" step="0.1" name="sleep" required /><br />
+  <div class="quiz-group">
+    <label for="sleep">How many hours do you sleep per night?</label>
+    <input type="number" step="0.1" name="sleep" required />
+  </div>
 
-  <label for="diet"
-    >How many servings of fruits and vegetables do you eat daily?</label
-  >
-  <input type="number" step="0.1" name="diet" required /><br />
+  <div class="quiz-group">
+    <label for="diet">How many servings of fruits and vegetables do you eat daily?</label>
+    <input type="number" step="0.1" name="diet" required />
+  </div>
 
-  <label for="stress"
-    >On a scale of 1 to 10, how stressed are you on a typical day?</label
-  >
-  <input type="number" name="stress" min="1" max="10" required /><br />
+  <div class="quiz-group">
+    <label for="stress">On a scale of 1 to 10, how stressed are you on a typical day?</label>
+    <input type="number" name="stress" min="1" max="10" required />
+  </div>
 
-  <input type="submit" value="Get Health Tips" />
+  <input type="submit" value="Get Health Tips" class="submit-button" />
 </form>
 
 <!-- Show recommendation tips if available -->
-{% if tips %}
-<h2>Recommendations:</h2>
-<ul>
-  {% for tip in tips %}
-  <li>{{ tip }}</li>
-  {% endfor %}
-</ul>
-{% endif %} {% if recommendations %}
-<h2>Your Personalized Recommendations:</h2>
-<ul>
-  {% for recommendation in recommendations %}
-  <li>{{ recommendation }}</li>
-  {% endfor %}
-</ul>
-{% endif %} {% if detailed_feedback %}
-<h2>Detailed Feedback:</h2>
-<ul>
-  {% for feedback in detailed_feedback %}
-  <li>{{ feedback }}</li>
-  {% endfor %}
-</ul>
-{% endif %} {%endblock body%}
+<div class="result">
+  {% if tips %}
+    <h2 class="result-heading">Recommendations:</h2>
+    <ul class="result-list">
+      {% for tip in tips %}
+        <li>{{ tip }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  
+  {% if recommendations %}
+    <h2 class="result-heading">Your Personalized Recommendations:</h2>
+    <ul class="result-list">
+      {% for recommendation in recommendations %}
+        <li>{{ recommendation }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  
+  {% if detailed_feedback %}
+    <h2 class="result-heading">Detailed Feedback:</h2>
+    <ul class="result-list">
+      {% for feedback in detailed_feedback %}
+        <li>{{ feedback }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
+
+ {%endblock body%}
